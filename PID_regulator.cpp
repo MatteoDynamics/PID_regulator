@@ -9,7 +9,7 @@ using namespace std;
 constexpr float WYS_ =5;
 constexpr float SZER_ = 1;
 constexpr float GLEB_ = 1;
-constexpr float NOMINAL_POWER = 200;
+constexpr float NOMINAL_POWER = 500;
 int main()
 {
 	Simulation sim(WYS_, SZER_, GLEB_, NOMINAL_POWER);

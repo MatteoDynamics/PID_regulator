@@ -1,5 +1,7 @@
 #include "Simulation.h"
 #include "Pomieszczenie.h"
+#include "Regulator.h"
+#include "RegulatorBB.h"
 #include<windows.h>
 #include <fstream>
 constexpr float POWER = 1;
@@ -11,8 +13,13 @@ void Simulation::iteration(float time)
 		time_sim += time;
 		room.aktualizuj(time);
 		grzejnik.set_current_power(POWER);
+		//room.dodajCieplo(grzejnik.power());
+		RegulatorBB regulatorBB;
+		regulator = &regulatorBB;
+		grzejnik.set_current_power(regulator->steering(10, room.getTemperatura(), 5));
 		room.dodajCieplo(grzejnik.power());
 		
+
 		break;
 	}
 	

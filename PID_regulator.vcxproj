@@ -130,11 +130,17 @@
     <ClCompile Include="Grzejnik.cpp" />
     <ClCompile Include="PID_regulator.cpp" />
     <ClCompile Include="Pomieszczenie.cpp" />
+    <ClCompile Include="Regulator.cpp" />
+    <ClCompile Include="RegulatorBB.cpp" />
+    <ClCompile Include="RegulatorPID.cpp" />
     <ClCompile Include="Simulation.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Grzejnik.h" />
     <ClInclude Include="Pomieszczenie.h" />
+    <ClInclude Include="Regulator.h" />
+    <ClInclude Include="RegulatorBB.h" />
+    <ClInclude Include="RegulatorPID.h" />
     <ClInclude Include="Simulation.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

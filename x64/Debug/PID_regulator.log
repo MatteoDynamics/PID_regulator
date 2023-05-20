@@ -1,2 +1,5 @@
 ﻿  PID_regulator.cpp
+  Simulation.cpp
+C:\Users\Matteo\source\repos\PID_regulator\PID_regulator\Simulation.cpp(12,9): warning C4244: "argument": konwersja z "float" do "DWORD", możliwa utrata danych
+  Generowanie kodu...
   PID_regulator.vcxproj -> C:\Users\Matteo\source\repos\PID_regulator\x64\Debug\PID_regulator.exe
