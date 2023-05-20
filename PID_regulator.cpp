@@ -9,11 +9,11 @@ using namespace std;
 constexpr float WYS_ =5;
 constexpr float SZER_ = 1;
 constexpr float GLEB_ = 1;
-constexpr float NOMINAL_POWER = 500;
+constexpr float NOMINAL_POWER = 2500;
 int main()
 {
 	Simulation sim(WYS_, SZER_, GLEB_, NOMINAL_POWER);
-	sim.run(500, 10);
+	sim.run(120, 5);
 	sim.save("pid.csv");
 }
 
