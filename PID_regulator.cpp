@@ -13,7 +13,7 @@ constexpr float NOMINAL_POWER = 2500;
 int main()
 {
 	Simulation sim(WYS_, SZER_, GLEB_, NOMINAL_POWER);
-	sim.run(120, 5);
+	sim.run(100, 10);
 	sim.save("pid.csv");
 }
 

@@ -1,5 +1,6 @@
 #pragma once
 #include "Pomieszczenie.h"
+
 class Grzejnik
 {
 	const float nominal_power;

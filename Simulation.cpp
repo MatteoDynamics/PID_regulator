@@ -6,24 +6,23 @@
 #include<windows.h>
 #include <fstream>
 
-constexpr float POWER = 1;
 void Simulation::iteration(float time)
 {
 	while (true)
 	{
-		//std::cout <<"time:"<< time<<std::endl;
 		Sleep(time);
 		time_sim += time;
-		room.aktualizuj(time);
-		grzejnik.set_current_power(POWER);
 		//room.dodajCieplo(grzejnik.power());
-		RegulatorBB regulatorBB;
-		RegulatorPID PID;
-		regulator = &regulatorBB;
+		RegulatorBB regulatorBB(room,grzejnik);
+		RegulatorPID PID(room,grzejnik);
+		//regulator = &regulatorBB;
 		regulator = &PID;
+		regulator->steering(-10, time);
+		//regulator = &PID;
+		//regulator->
 
-		grzejnik.set_current_power(regulator->steering(5, room.getTemperatura(), time));
-		room.dodajCieplo(grzejnik.power());
+		//grzejnik.set_current_power(regulator->steering(-10, room.getTemperatura(), time));
+		//room.dodajCieplo(grzejnik.power());
 		
 
 		break;
