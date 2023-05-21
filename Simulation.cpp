@@ -5,26 +5,31 @@
 #include "RegulatorPID.h"
 #include<windows.h>
 #include <fstream>
+#include <exception>
 
 void Simulation::iteration(float time)
 {
+		
+		RegulatorBB regulatorBB(room, grzejnik);
+		RegulatorPID PID(room, grzejnik);
+		regulator = &PID;
+		
 	while (true)
 	{
 		Sleep(time);
 		time_sim += time;
-		//room.dodajCieplo(grzejnik.power());
-		RegulatorBB regulatorBB(room,grzejnik);
-		RegulatorPID PID(room,grzejnik);
 		//regulator = &regulatorBB;
 		regulator = &PID;
-		regulator->steering(-10, time);
-		//regulator = &PID;
-		//regulator->
+		try{
+			regulator->steering(-10, time);
+		}
+		catch (const std::exception& e)
+		{
+			e.~exception();
+			std::cerr << "not configured Regulator" << std::endl;
+			exit(1);
 
-		//grzejnik.set_current_power(regulator->steering(-10, room.getTemperatura(), time));
-		//room.dodajCieplo(grzejnik.power());
-		
-
+		}
 		break;
 	}
 	

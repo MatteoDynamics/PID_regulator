@@ -1,4 +1,4 @@
 ﻿  Simulation.cpp
 C:\Users\Matteo\source\repos\PID_regulator\PID_regulator\RegulatorPID.h(16): warning C4305: "=": obcięcie z "double" do "float"
-C:\Users\Matteo\source\repos\PID_regulator\PID_regulator\Simulation.cpp(13,9): warning C4244: "argument": konwersja z "float" do "DWORD", możliwa utrata danych
+C:\Users\Matteo\source\repos\PID_regulator\PID_regulator\Simulation.cpp(19,9): warning C4244: "argument": konwersja z "float" do "DWORD", możliwa utrata danych
   PID_regulator.vcxproj -> C:\Users\Matteo\source\repos\PID_regulator\x64\Debug\PID_regulator.exe

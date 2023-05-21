@@ -16,6 +16,10 @@ public:
 	RegulatorPID(Pomieszczenie& pomieszczenie, Grzejnik& grzejnik) { kp = 50.0; ki = 0.02; kd = 0.1; e_calka = 0; delta_e = 0; e = 0; this->pomieszczenie = &pomieszczenie; this->grzejnik = &grzejnik; };
 	void steering(float temp_zadana, float time)
 	{
+		if (pomieszczenie == nullptr || grzejnik == nullptr)
+		{
+			throw std::exception();
+		}
 		float temp_aktualna = pomieszczenie->getTemperatura();
 		pomieszczenie->aktualizuj(time);
 		float u_sum=0;
