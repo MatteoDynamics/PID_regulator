@@ -13,13 +13,12 @@ void Simulation::iteration(float time)
 		RegulatorBB regulatorBB(room, grzejnik);
 		RegulatorPID PID(room, grzejnik);
 		regulator = &PID;
+		//regulator = &regulatorBB;
 		
 	while (true)
 	{
 		Sleep(time);
 		time_sim += time;
-		//regulator = &regulatorBB;
-		regulator = &PID;
 		try{
 			regulator->steering(-10, time);
 		}
